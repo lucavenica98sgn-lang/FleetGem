@@ -104,6 +104,9 @@ export default function App() {
             <span style={{ fontWeight: 700, fontSize: 18, color: "#f1f5f9", letterSpacing: "-0.5px" }}>FleetCore</span>
           </div>
           <p style={{ fontSize: 10, color: "#334155", marginTop: 4, fontFamily: "'DM Mono', monospace" }}>GESTIONE FLOTTA</p>
+          <p style={{ fontSize: 10, color: "#1e3050", marginTop: 6, fontFamily: "'DM Mono', monospace", borderTop: "1px solid #1a2538", paddingTop: 6 }}>
+            © {new Date().getFullYear()} Luca Venica
+          </p>
         </div>
 
         {/* Nav */}
