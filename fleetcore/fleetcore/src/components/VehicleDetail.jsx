@@ -20,8 +20,8 @@ function EventDetailModal({ ev, vehicles, onDelete, onClose }) {
       <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 24 }}>
         <span style={{ fontSize: 40 }}>{meta.icon}</span>
         <div>
-          <h3 style={{ color: "#f1f5f9", fontWeight: 700, fontSize: 20 }}>{meta.label}</h3>
-          {vehicle && <p style={{ color: "#475569", fontSize: 13, marginTop: 2 }}>{vehicle.brand} {vehicle.model} · {vehicle.plate}</p>}
+          <h3 style={{ color: "#1C1A17", fontWeight: 700, fontSize: 20 }}>{meta.label}</h3>
+          {vehicle && <p style={{ color: "#7A7268", fontSize: 13, marginTop: 2 }}>{vehicle.brand} {vehicle.model} · {vehicle.plate}</p>}
         </div>
       </div>
 
@@ -63,16 +63,16 @@ function EventDetailModal({ ev, vehicles, onDelete, onClose }) {
       </div>
 
       {ev.notes && (
-        <div style={{ background: "#080d16", borderRadius: 8, padding: "12px 16px", marginBottom: 16 }}>
-          <p style={{ fontSize: 11, color: "#475569", marginBottom: 4 }}>NOTE</p>
-          <p style={{ color: "#cbd5e1", lineHeight: 1.6, fontSize: 14 }}>{ev.notes}</p>
+        <div style={{ background: "#FAF7F2", borderRadius: 8, padding: "12px 16px", marginBottom: 16 }}>
+          <p style={{ fontSize: 11, color: "#7A7268", marginBottom: 4 }}>NOTE</p>
+          <p style={{ color: "#4A4540", lineHeight: 1.6, fontSize: 14 }}>{ev.notes}</p>
         </div>
       )}
 
       {ev.inspectionNotes && (
-        <div style={{ background: "#080d16", borderRadius: 8, padding: "12px 16px", marginBottom: 16 }}>
-          <p style={{ fontSize: 11, color: "#475569", marginBottom: 4 }}>NOTE ISPEZIONE</p>
-          <p style={{ color: "#cbd5e1", lineHeight: 1.6, fontSize: 14 }}>{ev.inspectionNotes}</p>
+        <div style={{ background: "#FAF7F2", borderRadius: 8, padding: "12px 16px", marginBottom: 16 }}>
+          <p style={{ fontSize: 11, color: "#7A7268", marginBottom: 4 }}>NOTE ISPEZIONE</p>
+          <p style={{ color: "#4A4540", lineHeight: 1.6, fontSize: 14 }}>{ev.inspectionNotes}</p>
         </div>
       )}
 
@@ -119,12 +119,12 @@ export default function VehicleDetail({ vehicle, vehicles, events, kmReadings, o
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 28 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <button onClick={onBack} style={{
-            background: "#1a2538", border: "none", color: "#94a3b8",
+            background: "#D6CFC2", border: "none", color: "#7A7268",
             width: 36, height: 36, borderRadius: 8, fontSize: 18,
             display: "flex", alignItems: "center", justifyContent: "center",
           }}>←</button>
           <div>
-            <h1 style={{ fontSize: 24, fontWeight: 700, color: "#f1f5f9", letterSpacing: "-0.3px" }}>
+            <h1 style={{ fontSize: 24, fontWeight: 700, color: "#1C1A17", letterSpacing: "-0.3px" }}>
               {vehicle.brand} {vehicle.model}
             </h1>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 6, alignItems: "center" }}>
@@ -146,18 +146,18 @@ export default function VehicleDetail({ vehicle, vehicles, events, kmReadings, o
       {/* KM + INSURANCE INFO */}
       <div style={{ display: "flex", gap: 12, marginBottom: 28, flexWrap: "wrap" }}>
         {latestKm && (
-          <div style={{ background: "#0d1424", border: "1px solid #1a2538", borderRadius: 12, padding: "14px 20px", display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
+          <div style={{ background: "#F5F0E8", border: "1px solid #1a2538", borderRadius: 12, padding: "14px 20px", display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
             <div>
-              <p style={{ fontSize: 11, color: "#475569", marginBottom: 2 }}>KM ATTUALI</p>
-              <p style={{ fontSize: 22, fontWeight: 700, fontFamily: "'DM Mono', monospace", color: "#f1f5f9" }}>
+              <p style={{ fontSize: 11, color: "#7A7268", marginBottom: 2 }}>KM ATTUALI</p>
+              <p style={{ fontSize: 22, fontWeight: 700, fontFamily: "'DM Mono', monospace", color: "#1C1A17" }}>
                 {Number(latestKm.km).toLocaleString("it-IT")}
               </p>
-              <p style={{ fontSize: 11, color: "#334155" }}>al {formatDate(latestKm.date)}</p>
+              <p style={{ fontSize: 11, color: "#C4BAA8" }}>al {formatDate(latestKm.date)}</p>
             </div>
             {avgKmMonth && (
               <div>
-                <p style={{ fontSize: 11, color: "#475569", marginBottom: 2 }}>MEDIA MENSILE</p>
-                <p style={{ fontSize: 18, fontWeight: 700, fontFamily: "'DM Mono', monospace", color: "#94a3b8" }}>
+                <p style={{ fontSize: 11, color: "#7A7268", marginBottom: 2 }}>MEDIA MENSILE</p>
+                <p style={{ fontSize: 18, fontWeight: 700, fontFamily: "'DM Mono', monospace", color: "#7A7268" }}>
                   ~{Number(avgKmMonth).toLocaleString("it-IT")} km/mese
                 </p>
               </div>
@@ -165,9 +165,9 @@ export default function VehicleDetail({ vehicle, vehicles, events, kmReadings, o
           </div>
         )}
         {vehicle.insurance && (
-          <div style={{ background: "#0d1424", border: "1px solid #1a2538", borderRadius: 12, padding: "14px 20px" }}>
-            <p style={{ fontSize: 11, color: "#475569", marginBottom: 2 }}>ASSICURAZIONE</p>
-            <p style={{ fontSize: 14, fontWeight: 600, color: "#f1f5f9" }}>{vehicle.insurance}</p>
+          <div style={{ background: "#F5F0E8", border: "1px solid #1a2538", borderRadius: 12, padding: "14px 20px" }}>
+            <p style={{ fontSize: 11, color: "#7A7268", marginBottom: 2 }}>ASSICURAZIONE</p>
+            <p style={{ fontSize: 14, fontWeight: 600, color: "#1C1A17" }}>{vehicle.insurance}</p>
             {vehicle.insuranceExpiry && (
               <p style={{ fontSize: 12, color: urgencyColor(daysUntil(vehicle.insuranceExpiry)), marginTop: 2, fontWeight: 600 }}>
                 Scad. {formatDate(vehicle.insuranceExpiry)} · {urgencyColor(daysUntil(vehicle.insuranceExpiry)) === "#10B981" ? "✅" : "⚠️"}
@@ -186,13 +186,13 @@ export default function VehicleDetail({ vehicle, vehicles, events, kmReadings, o
             {deadlines.map((d, i) => (
               <div key={i} style={{
                 display: "flex", alignItems: "center", gap: 8,
-                background: "#0d1424", border: `1px solid ${urgencyColor(d.days)}44`,
+                background: "#F5F0E8", border: `1px solid ${urgencyColor(d.days)}44`,
                 borderRadius: 8, padding: "8px 14px",
               }}>
                 <span>{d.meta.icon}</span>
-                <span style={{ fontWeight: 600, color: "#e2e8f0", fontSize: 13 }}>{d.meta.label}</span>
+                <span style={{ fontWeight: 600, color: "#1C1A17", fontSize: 13 }}>{d.meta.label}</span>
                 <DaysTag days={d.days} />
-                <span style={{ fontSize: 11, color: "#334155" }}>{formatDate(d.nextDate)}</span>
+                <span style={{ fontSize: 11, color: "#C4BAA8" }}>{formatDate(d.nextDate)}</span>
               </div>
             ))}
           </div>
@@ -206,18 +206,18 @@ export default function VehicleDetail({ vehicle, vehicles, events, kmReadings, o
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {vKm.slice(0, 12).map((k, i) => (
               <div key={k.id} style={{
-                background: i === 0 ? "#3B82F620" : "#0d1424",
-                border: `1px solid ${i === 0 ? "#3B82F640" : "#1a2538"}`,
+                background: i === 0 ? "#3B82F620" : "#F5F0E8",
+                border: `1px solid ${i === 0 ? "#3B82F640" : "#D6CFC2"}`,
                 borderRadius: 8, padding: "8px 14px", position: "relative",
               }}>
-                <p style={{ fontSize: 14, fontWeight: 700, fontFamily: "'DM Mono', monospace", color: i === 0 ? "#3B82F6" : "#94a3b8" }}>
+                <p style={{ fontSize: 14, fontWeight: 700, fontFamily: "'DM Mono', monospace", color: i === 0 ? "#2563EB" : "#7A7268" }}>
                   {Number(k.km).toLocaleString("it-IT")} km
                 </p>
-                <p style={{ fontSize: 11, color: "#334155" }}>{formatDate(k.date)}</p>
-                {k.notes && <p style={{ fontSize: 10, color: "#334155", marginTop: 2 }}>{k.notes}</p>}
+                <p style={{ fontSize: 11, color: "#C4BAA8" }}>{formatDate(k.date)}</p>
+                {k.notes && <p style={{ fontSize: 10, color: "#C4BAA8", marginTop: 2 }}>{k.notes}</p>}
                 <button onClick={() => onDeleteKm(k.id)} style={{
                   position: "absolute", top: 4, right: 4, background: "none", border: "none",
-                  color: "#334155", fontSize: 12, cursor: "pointer", padding: "2px 4px",
+                  color: "#C4BAA8", fontSize: 12, cursor: "pointer", padding: "2px 4px",
                 }}>✕</button>
               </div>
             ))}
@@ -232,9 +232,9 @@ export default function VehicleDetail({ vehicle, vehicles, events, kmReadings, o
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 16 }}>
         {[["tutti", "Tutti", vEvents.length], ...Object.entries(EVENT_TYPES).map(([t, m]) => [t, m.label, vEvents.filter(e => e.type === t).length]).filter(([,, c]) => c > 0)].map(([t, label, count]) => (
           <button key={t} onClick={() => setFilter(t)} style={{
-            padding: "6px 12px", background: filter === t ? "#1a2538" : "#080d16",
-            border: `1px solid ${filter === t ? "#3B82F6" : "#1a2538"}`,
-            borderRadius: 8, color: filter === t ? "#f1f5f9" : "#475569",
+            padding: "6px 12px", background: filter === t ? "#D6CFC2" : "#FAF7F2",
+            border: `1px solid ${filter === t ? "#2563EB" : "#D6CFC2"}`,
+            borderRadius: 8, color: filter === t ? "#1C1A17" : "#7A7268",
             fontSize: 12, transition: "all .15s",
           }}>
             {label} ({count})
@@ -255,7 +255,7 @@ export default function VehicleDetail({ vehicle, vehicles, events, kmReadings, o
                 onClick={() => { setSelectedEvent(ev); setModal("event-detail"); }}
                 style={{
                   display: "flex", alignItems: "center", gap: 14,
-                  background: "#0d1424", border: "1px solid #1a2538",
+                  background: "#F5F0E8", border: "1px solid #1a2538",
                   borderRadius: 10, padding: "12px 16px", cursor: "pointer",
                   transition: "border-color .15s",
                 }}
@@ -267,15 +267,15 @@ export default function VehicleDetail({ vehicle, vehicles, events, kmReadings, o
                 }}>{meta.icon}</span>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
-                    <span style={{ fontWeight: 600, fontSize: 14, color: "#f1f5f9" }}>{meta.label}</span>
-                    {ev.supplier && <span style={{ fontSize: 12, color: "#475569" }}>{ev.supplier}</span>}
-                    {ev.cost && <span style={{ fontSize: 12, color: "#94a3b8", fontFamily: "'DM Mono', monospace" }}>€{ev.cost}</span>}
+                    <span style={{ fontWeight: 600, fontSize: 14, color: "#1C1A17" }}>{meta.label}</span>
+                    {ev.supplier && <span style={{ fontSize: 12, color: "#7A7268" }}>{ev.supplier}</span>}
+                    {ev.cost && <span style={{ fontSize: 12, color: "#7A7268", fontFamily: "'DM Mono', monospace" }}>€{ev.cost}</span>}
                   </div>
-                  {ev.notes && <p style={{ color: "#475569", fontSize: 12, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{ev.notes}</p>}
+                  {ev.notes && <p style={{ color: "#7A7268", fontSize: 12, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{ev.notes}</p>}
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4, flexShrink: 0 }}>
-                  <span style={{ color: "#334155", fontSize: 12, fontFamily: "'DM Mono', monospace" }}>{formatDate(ev.date)}</span>
-                  {ev.km && <span style={{ fontSize: 11, color: "#334155", fontFamily: "'DM Mono', monospace" }}>{Number(ev.km).toLocaleString("it-IT")} km</span>}
+                  <span style={{ color: "#C4BAA8", fontSize: 12, fontFamily: "'DM Mono', monospace" }}>{formatDate(ev.date)}</span>
+                  {ev.km && <span style={{ fontSize: 11, color: "#C4BAA8", fontFamily: "'DM Mono', monospace" }}>{Number(ev.km).toLocaleString("it-IT")} km</span>}
                   {nd !== null && <DaysTag days={nd} />}
                 </div>
               </div>

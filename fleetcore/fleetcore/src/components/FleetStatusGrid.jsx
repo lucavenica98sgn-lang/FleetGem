@@ -52,14 +52,14 @@ export default function FleetStatusGrid({ vehicles, events, kmReadings, onVehicl
     if (status.inRepair || status.activeSostitutiva) return "#EF444410";
     if (status.worstDeadline && status.worstDeadline.days <= 14) return "#F9731610";
     if (status.worstDeadline && status.worstDeadline.days <= 30) return "#F59E0B10";
-    return "#0d1424";
+    return "#F5F0E8";
   };
 
   const getCardBorder = (status) => {
     if (status.inRepair || status.activeSostitutiva) return "#EF444440";
     if (status.worstDeadline && status.worstDeadline.days <= 14) return "#F9731640";
     if (status.worstDeadline && status.worstDeadline.days <= 30) return "#F59E0B40";
-    return "#1a2538";
+    return "#D6CFC2";
   };
 
   const StatusDot = ({ status }) => {
@@ -84,11 +84,11 @@ export default function FleetStatusGrid({ vehicles, events, kmReadings, onVehicl
         <PlateTag plate={vehicle.plate} />
         <StatusDot status={status} />
       </div>
-      <p style={{ fontSize: 12, color: "#94a3b8", marginBottom: 6 }}>
+      <p style={{ fontSize: 12, color: "#7A7268", marginBottom: 6 }}>
         {vehicle.brand} {vehicle.model}
       </p>
       {vehicle.driver && (
-        <p style={{ fontSize: 11, color: "#475569", marginBottom: 8 }}>👤 {vehicle.driver}</p>
+        <p style={{ fontSize: 11, color: "#7A7268", marginBottom: 8 }}>👤 {vehicle.driver}</p>
       )}
 
       {status.inRepair && !status.activeSostitutiva && (
@@ -99,7 +99,7 @@ export default function FleetStatusGrid({ vehicles, events, kmReadings, onVehicl
 
       {status.worstDeadline && !status.inRepair && !status.activeSostitutiva && (
         <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
-          <span style={{ fontSize: 11, color: "#475569" }}>{status.worstDeadline.meta.icon} {status.worstDeadline.meta.label}</span>
+          <span style={{ fontSize: 11, color: "#7A7268" }}>{status.worstDeadline.meta.icon} {status.worstDeadline.meta.label}</span>
           <DaysTag days={status.worstDeadline.days} />
         </div>
       )}
@@ -123,8 +123,8 @@ export default function FleetStatusGrid({ vehicles, events, kmReadings, onVehicl
                     <VehicleStatusCard vehicle={vehicle} status={status} />
                   </div>
                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
-                    <span style={{ fontSize: 18, color: "#475569" }}>⇄</span>
-                    <span style={{ fontSize: 10, color: "#475569" }}>sostitutiva</span>
+                    <span style={{ fontSize: 18, color: "#7A7268" }}>⇄</span>
+                    <span style={{ fontSize: 10, color: "#7A7268" }}>sostitutiva</span>
                   </div>
                   <div style={{
                     flex: 1, minWidth: 200, background: "#6366F110", border: "1px solid #6366F140",
@@ -135,7 +135,7 @@ export default function FleetStatusGrid({ vehicles, events, kmReadings, onVehicl
                       🚗 Vettura sostitutiva attiva
                     </p>
                     {sub.toDate && (
-                      <p style={{ fontSize: 11, color: "#475569", marginTop: 4 }}>
+                      <p style={{ fontSize: 11, color: "#7A7268", marginTop: 4 }}>
                         Fino al {sub.toDate.split("-").reverse().join("/")}
                       </p>
                     )}

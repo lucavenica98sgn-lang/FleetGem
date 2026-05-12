@@ -20,8 +20,8 @@ export default function VehiclesList({ vehicles, events, kmReadings, onVehicleCl
     <div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 28 }}>
         <div>
-          <h1 style={{ fontSize: 26, fontWeight: 700, color: "#f1f5f9", letterSpacing: "-0.5px" }}>Parco Veicoli</h1>
-          <p style={{ color: "#475569", fontSize: 14, marginTop: 4 }}>{vehicles.length} veicoli registrati</p>
+          <h1 style={{ fontSize: 26, fontWeight: 700, color: "#1C1A17", letterSpacing: "-0.5px" }}>Parco Veicoli</h1>
+          <p style={{ color: "#7A7268", fontSize: 14, marginTop: 4 }}>{vehicles.length} veicoli registrati</p>
         </div>
         <PrimaryBtn onClick={onAddVehicle}>+ Aggiungi Veicolo</PrimaryBtn>
       </div>
@@ -40,7 +40,7 @@ export default function VehiclesList({ vehicles, events, kmReadings, onVehicleCl
                 key={v.id}
                 onClick={() => onVehicleClick(v.id)}
                 style={{
-                  background: "#0d1424", border: "1px solid #1a2538",
+                  background: "#F5F0E8", border: "1px solid #1a2538",
                   borderRadius: 14, padding: 20, cursor: "pointer",
                   transition: "border-color .15s, transform .15s",
                   position: "relative", overflow: "hidden",
@@ -58,7 +58,7 @@ export default function VehiclesList({ vehicles, events, kmReadings, onVehicleCl
 
                 <div style={{ marginTop: worst && worst.days <= 30 ? 26 : 0 }}>
                   <PlateTag plate={v.plate} large />
-                  <h3 style={{ fontSize: 16, fontWeight: 700, color: "#f1f5f9", margin: "10px 0 8px" }}>
+                  <h3 style={{ fontSize: 16, fontWeight: 700, color: "#1C1A17", margin: "10px 0 8px" }}>
                     {v.brand} {v.model}
                   </h3>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 10 }}>
@@ -66,9 +66,9 @@ export default function VehiclesList({ vehicles, events, kmReadings, onVehicleCl
                     {v.fuel && <Chip>{v.fuel}</Chip>}
                     {v.color && <Chip>{v.color}</Chip>}
                   </div>
-                  {v.driver && <p style={{ color: "#475569", fontSize: 13, marginBottom: 10 }}>👤 {v.driver}</p>}
+                  {v.driver && <p style={{ color: "#7A7268", fontSize: 13, marginBottom: 10 }}>👤 {v.driver}</p>}
                   {latestKm && (
-                    <p style={{ color: "#475569", fontSize: 12, fontFamily: "'DM Mono', monospace" }}>
+                    <p style={{ color: "#7A7268", fontSize: 12, fontFamily: "'DM Mono', monospace" }}>
                       📍 {Number(latestKm.km).toLocaleString("it-IT")} km · {formatDate(latestKm.date)}
                     </p>
                   )}
@@ -78,10 +78,10 @@ export default function VehiclesList({ vehicles, events, kmReadings, onVehicleCl
                   display: "flex", justifyContent: "space-between", alignItems: "center",
                   marginTop: 16, paddingTop: 12, borderTop: "1px solid #1a2538",
                 }}>
-                  <span style={{ background: "#1a2538", padding: "3px 10px", borderRadius: 20, fontSize: 12, color: "#475569" }}>
+                  <span style={{ background: "#D6CFC2", padding: "3px 10px", borderRadius: 20, fontSize: 12, color: "#7A7268" }}>
                     {evCount} eventi
                   </span>
-                  <span style={{ color: "#3B82F6", fontSize: 18 }}>→</span>
+                  <span style={{ color: "#2563EB", fontSize: 18 }}>→</span>
                 </div>
               </div>
             );

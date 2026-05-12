@@ -52,24 +52,24 @@ export default function App() {
   const selectedVehicle = vehicles.find(v => v.id === selectedId);
 
   if (loading) return (
-    <div style={{ display: "flex", height: "100vh", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 16 }}>
-      <div style={{ width: 40, height: 40, border: "3px solid #1a2538", borderTopColor: "#3B82F6", borderRadius: "50%", animation: "spin 1s linear infinite" }} />
-      <p style={{ color: "#475569", fontFamily: "'DM Sans', sans-serif" }}>Connessione a Firebase…</p>
+    <div style={{ display: "flex", height: "100vh", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 16, background: "#FAF7F2" }}>
+      <div style={{ width: 40, height: 40, border: "3px solid #D6CFC2", borderTopColor: "#2563EB", borderRadius: "50%", animation: "spin 1s linear infinite" }} />
+      <p style={{ color: "#7A7268", fontFamily: "'DM Sans', sans-serif" }}>Connessione a Firebase…</p>
     </div>
   );
 
   return (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
-      <aside style={{ width: 220, background: "#0d1424", borderRight: "1px solid #1a2538", display: "flex", flexDirection: "column", padding: "0 0 24px", position: "sticky", top: 0, height: "100vh", overflowY: "auto", flexShrink: 0 }}>
+    <div style={{ display: "flex", minHeight: "100vh", background: "#FAF7F2" }}>
+      <aside style={{ width: 220, background: "#F0EBE1", borderRight: "1px solid #D6CFC2", display: "flex", flexDirection: "column", padding: "0 0 24px", position: "sticky", top: 0, height: "100vh", overflowY: "auto", flexShrink: 0 }}>
 
         {/* Logo */}
-        <div style={{ padding: "24px 20px 20px", borderBottom: "1px solid #1a2538" }}>
+        <div style={{ padding: "24px 20px 20px", borderBottom: "1px solid #D6CFC2" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ fontSize: 22, color: "#3B82F6" }}>⬡</span>
-            <span style={{ fontWeight: 700, fontSize: 18, color: "#f1f5f9", letterSpacing: "-0.5px" }}>FleetCore</span>
+            <span style={{ fontSize: 22, color: "#2563EB" }}>⬡</span>
+            <span style={{ fontWeight: 700, fontSize: 18, color: "#1C1A17", letterSpacing: "-0.5px" }}>FleetCore</span>
           </div>
-          <p style={{ fontSize: 10, color: "#334155", marginTop: 4, fontFamily: "'DM Mono', monospace" }}>GESTIONE FLOTTA</p>
-          <p style={{ fontSize: 10, color: "#1e3050", marginTop: 6, fontFamily: "'DM Mono', monospace", borderTop: "1px solid #1a2538", paddingTop: 6 }}>
+          <p style={{ fontSize: 10, color: "#7A7268", marginTop: 4, fontFamily: "'DM Mono', monospace" }}>GESTIONE FLOTTA</p>
+          <p style={{ fontSize: 10, color: "#C4BAA8", marginTop: 6, fontFamily: "'DM Mono', monospace", borderTop: "1px solid #D6CFC2", paddingTop: 6 }}>
             © {new Date().getFullYear()} Luca Venica
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function App() {
         {/* Nav */}
         <nav style={{ padding: "14px 10px", display: "flex", flexDirection: "column", gap: 3 }}>
           {[{ id: "dashboard", icon: "▦", label: "Dashboard" }, { id: "vehicles", icon: "◈", label: "Veicoli" }].map(item => (
-            <button key={item.id} onClick={() => { setView(item.id); setSelectedId(null); }} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 12px", background: view === item.id ? "#1a2538" : "transparent", border: "none", color: view === item.id ? "#f1f5f9" : "#475569", borderRadius: 8, fontSize: 14, fontWeight: 500, textAlign: "left", transition: "all .15s", width: "100%" }}>
+            <button key={item.id} onClick={() => { setView(item.id); setSelectedId(null); }} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 12px", background: view === item.id ? "#E2DAD0" : "transparent", border: "none", color: view === item.id ? "#1C1A17" : "#7A7268", borderRadius: 8, fontSize: 14, fontWeight: 500, textAlign: "left", transition: "all .15s", width: "100%" }}>
               <span style={{ fontSize: 15, width: 18, textAlign: "center" }}>{item.icon}</span>{item.label}
             </button>
           ))}
@@ -86,22 +86,22 @@ export default function App() {
         {/* Vehicle list */}
         {vehicles.length > 0 && (
           <div style={{ padding: "0 10px", flex: 1 }}>
-            <p style={{ fontSize: 10, color: "#1e3050", fontWeight: 700, letterSpacing: "0.1em", padding: "0 10px", marginBottom: 8 }}>VEICOLI</p>
+            <p style={{ fontSize: 10, color: "#C4BAA8", fontWeight: 700, letterSpacing: "0.1em", padding: "0 10px", marginBottom: 8 }}>VEICOLI</p>
             {vehicles.map(v => (
-              <button key={v.id} onClick={() => goToVehicle(v.id)} style={{ display: "flex", flexDirection: "column", width: "100%", padding: "8px 10px", background: selectedId === v.id ? "#1a2538" : "transparent", border: "none", borderRadius: 6, textAlign: "left", marginBottom: 2, cursor: "pointer", transition: "all .15s" }}>
-                <span style={{ fontFamily: "'DM Mono', monospace", fontWeight: 700, fontSize: 12, color: selectedId === v.id ? "#3B82F6" : "#3B82F680" }}>{v.plate}</span>
-                <span style={{ fontSize: 11, color: "#334155", marginTop: 1 }}>{v.brand} {v.model}</span>
+              <button key={v.id} onClick={() => goToVehicle(v.id)} style={{ display: "flex", flexDirection: "column", width: "100%", padding: "8px 10px", background: selectedId === v.id ? "#E2DAD0" : "transparent", border: "none", borderRadius: 6, textAlign: "left", marginBottom: 2, cursor: "pointer", transition: "all .15s" }}>
+                <span style={{ fontFamily: "'DM Mono', monospace", fontWeight: 700, fontSize: 12, color: selectedId === v.id ? "#2563EB" : "#93C5FD" }}>{v.plate}</span>
+                <span style={{ fontSize: 11, color: "#7A7268", marginTop: 1 }}>{v.brand} {v.model}</span>
               </button>
             ))}
           </div>
         )}
 
         <div style={{ padding: "12px 10px 0" }}>
-          <button onClick={() => setModal("vehicle")} style={{ width: "100%", padding: 10, background: "transparent", border: "1px dashed #1a2538", borderRadius: 8, color: "#334155", fontSize: 13, cursor: "pointer" }}>+ Aggiungi Veicolo</button>
+          <button onClick={() => setModal("vehicle")} style={{ width: "100%", padding: 10, background: "transparent", border: "1px dashed #C4BAA8", borderRadius: 8, color: "#7A7268", fontSize: 13, cursor: "pointer" }}>+ Aggiungi Veicolo</button>
         </div>
       </aside>
 
-      <main style={{ flex: 1, overflowY: "auto", padding: "40px 32px 60px" }}>
+      <main style={{ flex: 1, overflowY: "auto", padding: "40px 32px 60px", background: "#FAF7F2" }}>
         <div style={{ maxWidth: 1040, margin: "0 auto" }} className="fade-in">
           {view === "dashboard" && <Dashboard vehicles={vehicles} events={events} kmReadings={kmReadings} onVehicleClick={goToVehicle} onAddVehicle={() => setModal("vehicle")} />}
           {view === "vehicles"  && <VehiclesList vehicles={vehicles} events={events} kmReadings={kmReadings} onVehicleClick={goToVehicle} onAddVehicle={() => setModal("vehicle")} />}

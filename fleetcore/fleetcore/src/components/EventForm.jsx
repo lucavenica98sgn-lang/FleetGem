@@ -35,9 +35,9 @@ export default function EventForm({ vehicleId, onSave, onCancel }) {
           <button key={t} onClick={() => setType(t)} style={{
             display: "flex", flexDirection: "column", alignItems: "center",
             padding: "10px 4px", borderRadius: 10, border: "1px solid",
-            borderColor: type === t ? m.color : "#1a2538",
-            background: type === t ? m.color + "22" : "#080d16",
-            color: type === t ? "#f1f5f9" : "#475569",
+            borderColor: type === t ? m.color : "#D6CFC2",
+            background: type === t ? m.color + "22" : "#FAF7F2",
+            color: type === t ? "#1C1A17" : "#7A7268",
             fontSize: 11, fontFamily: "'DM Sans', sans-serif",
             transition: "all .15s", gap: 4,
           }}>
@@ -97,7 +97,7 @@ export default function EventForm({ vehicleId, onSave, onCancel }) {
         {/* ISPEZIONE PNEUMATICI */}
         {type === "ispezione_pn" && (<>
           <div style={{ gridColumn: "1 / -1" }}>
-            <p style={{ fontSize: 12, color: "#475569", marginBottom: 12, fontWeight: 600 }}>BATTISTRADA (mm)</p>
+            <p style={{ fontSize: 12, color: "#7A7268", marginBottom: 12, fontWeight: 600 }}>BATTISTRADA (mm)</p>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               <Field label="Ant. Sinistro (mm)">
                 <input value={f.frontLeftMm} onChange={set("frontLeftMm")} placeholder="7.0" type="number" step="0.1" />
@@ -161,7 +161,7 @@ export default function EventForm({ vehicleId, onSave, onCancel }) {
           <Field label="Veicolo attualmente in officina" span2>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <input type="checkbox" checked={f.inRepair} onChange={setCheck("inRepair")} style={{ width: "auto" }} id="inRepair" />
-              <label htmlFor="inRepair" style={{ color: "#94a3b8", fontSize: 14 }}>Sì, il veicolo è fermo in officina</label>
+              <label htmlFor="inRepair" style={{ color: "#7A7268", fontSize: 14 }}>Sì, il veicolo è fermo in officina</label>
             </div>
           </Field>
         </>)}
