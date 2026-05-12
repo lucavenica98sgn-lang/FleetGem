@@ -4,12 +4,18 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 2000,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'firebase-vendor': ['firebase/app', 'firebase/firestore'],
+        manualChunks(id) {
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            return 'react-vendor';
+          }
+          if (id.includes('node_modules/@firebase') || id.includes('node_modules/firebase')) {
+            if (id.includes('firestore')) return 'firebase-firestore';
+            if (id.includes('app')) return 'firebase-app';
+            return 'firebase-other';
+          }
         },
       },
     },
